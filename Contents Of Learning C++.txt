@@ -1,0 +1,25 @@
+You guys remember those pages in books that tell us which chapter is about what. It's just like that but for my C++ Learning File.
+Author- Anshu Kumar Singh a.k.a. Sidam
+
+Day1 - Data Types, Memory Spaces of Premitive Data Types, Introduction to a little code and Comments.
+
+Day2- Input, Output and If-else.
+
+Day3- Loops- For, While and Do While.
+
+Day4- Break and Continue.
+
+Day5- Switch and Case.
+
+Day6- Operators- Arithmetic, Relational, Logical, Bitwise, Assignment and more.
+
+Problems1- Creating patterns with For Loops.
+
+Problems2- Creating patterns with For Loops.
+
+Day7- Binary numbers and conversion and Code for identifing prime and armstrong numbers and reversing a number.
+
+Day8- Creating Functions and the Concept of Call Stack.
+
+Problems3- Problems on functions.
+
