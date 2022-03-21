@@ -1,0 +1,22 @@
+-------------------------------------
+Author- Anshu Kumar Sing a.k.a. Sidam
+Purpose - Notes of Learning C++
+
+Contents Of Learning C++ 
+-------------------------------------
+
+Day1- Introducton, Base code of C++ and Comments.
+
+Day2- Standard Library, Input and Output with Cin and Cout.
+
+Day3- Variables, Rules of naming and Scopes.
+
+Day4- Primitive Datatypes- Int, Char, Float and Bool.
+
+Day5- Sizeof operator, MIN and MAX, Constants and its types.
+
+Problem1- Frank Room Cleaning Service.
+
+Day6- Compund Datatypes, Arrays, Indexing and Multilevel Arrays.
+
+Day7- Vectors, Bounds Checking, Some Methods and Multilevel Vectors.
