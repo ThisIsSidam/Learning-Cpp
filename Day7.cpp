@@ -88,7 +88,7 @@ int main()
     // cout << two_dimensional[2][2] << " " << two_dimensional.at(2).at(2) << endl;
 
     // This is just the start of Arrays and Vectors, we'll learn loads more as we progress.
-    // Next we'll solve a problem and learn
+    // Next we'll learn about expressions, statements and operators next.
 
     return 0;
 

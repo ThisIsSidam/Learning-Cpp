@@ -20,3 +20,22 @@ Problem1- Frank Room Cleaning Service.
 Day6- Compund Datatypes, Arrays, Indexing and Multilevel Arrays.
 
 Day7- Vectors, Bounds Checking, Some Methods and Multilevel Vectors.
+
+Day8- Expressions, Statements along with Assignment and Mathematical operators.
+
+Day9- Increment and Decrement Operator along with Erocion and Type Casting.
+
+Day10- Equality, Relational and Logical operator along with Short-Circuit Evaluation, Compound 
+       Assignment and Precedence and Associativity.
+
+Problem2- Cash Counter.
+
+Day11- If-Else and Switch-Case statements along with Conditional operator.
+
+Day12- For, While and Do-While Loops, along with Break, Continue and Infinite Loops.
+
+Problem3- List Handler.
+
+Day13- Character Funcitons, C Style Strings and Some of its Functions.
+
+Day14- C++ Strings and their Functions.
