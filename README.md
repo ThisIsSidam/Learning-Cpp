@@ -3,7 +3,7 @@ Hey there guys,
 
 I am currently learning C++ and I am making online notes. The files in this repo are my notes.
 
-I am learning from Udemy, a course name "Learning C++ From beginning to beyond" Or something like this, Sorry, if I'm too wrong.
+I am learning from Udemy, a course by the name "Beginning C++ Programming- From Beginning to Beyond".
 It is by Tim Buchalka's Learning Programming Academy
 The Professor there is Dr. Frank Mitropoulos
 You should really go for this course, I'm telling you it's great.
