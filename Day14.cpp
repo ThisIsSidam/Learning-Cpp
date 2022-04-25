@@ -108,7 +108,26 @@ int main()
     // cout << "Mine are: " + str7 << endl;
     // cout << "Wow, they match." << endl;
 
-    // Next- 
+
+    /*
+    * Two more things
+    *
+    * When you use cin, it takes input and leaves all the spaces in the end, you know that but if you
+    * use getline after using a cin, all the blanks left by the cin will be taken by getline and you 
+    * won't be able to give any input, it will be skipped. To solve that problem, we use
+    * 
+    * cin.ignore()
+    * 
+    * It takes up all the spaces left by cin, just use it after cin or getline, it will be usefull for
+    * the next getline.
+    * 
+    * Second thing, sometimes we create var that we know will contain +ve values, like a var for 
+    * distance or size, these things can't be -ve, right. In those times, you should use size_t 
+    * instead of unsigned int. It's just better. Mainly used in for loops.
+    * 
+    * Next- Two Problems and then Functions, Defining a Functions, Function Prototypes, Default 
+    * Parameters and Overloading sa Function.
+    */
     return 0;
 
 }

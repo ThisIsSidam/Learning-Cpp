@@ -24,7 +24,7 @@ int main()
     * Now Go!
     */
 
-    vector <int> list {85, 70, 80, 97, 81, 123};
+    vector <int> list {};
 
     int option {};
     do {

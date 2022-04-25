@@ -39,3 +39,22 @@ Problem3- List Handler.
 Day13- Character Funcitons, C Style Strings and Some of its Functions.
 
 Day14- C++ Strings and their Functions.
+
+Problem4- Substitution Cipher.
+
+Problem5- Letter Pyramid.
+
+Day15- Functions, Defining a Functions, Function Prototypes, Default Parameters and Overloading 
+       a Function.
+
+Day16- Passing Arrays, Passing by reference, Scopes, Call Stack Memory Allocations, Inline Functions 
+       Recursions.
+
+Problem6- List Handler 2.
+
+Day17- A problem and then Pointers, Dereferencing, Heap Memory Allocation and Notation.
+
+Day18- Pointer Arithmetic, Const Pointers, Passing Pointers in functions, Returning pointers 
+       from a function, Pointer Pitfalls, Reference and L-values and R-values.
+
+Problem7- List Multiplier.
