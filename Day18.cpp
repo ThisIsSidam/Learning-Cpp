@@ -146,6 +146,9 @@ int main()
     * 
     * Ex- int x = 34; Here x is a L-value and 34 is a R-value(A literal).
     * int y = max(x, z); Here y is an L-value and max(x,z) is a R-value(A temperory num).
+    * 
+    * Next- A Problem and then Procedural Programming Summary, OOP, Classes, Objects, Default 
+    * Attributes, Accessing Class Data, Access Modifiers, Methods, Setters and Getters.
     */
 
     return 0;
