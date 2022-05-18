@@ -1,31 +1,27 @@
 #include "Day20Additional.h"
 
-void Day20Additional::set_name(std::string str)
+// Day20Additonal::Day20Additonal()
+// {}
+
+// Day20Additonal::~Day20Additonal()
+// {}
+
+void Day20Additional::set_hp(int i)
 {
-    name = str;
-};
+    hp = i;
+}
 
-std::string Day20Additional::get_name()
+int Day20Additional::get_hp()
 {
-    return name;
-};
+    return hp;
+}
 
-void Day20Additional::set_age(int x)
+void Day20Additional::double_hp()
 {
-    age = x;
-};
+    hp *= 2;
+}
 
-int Day20Additional::get_age()
+void Day20Additional::null_hp()
 {
-    return age;
-};
-
-// Day20Additional::Day20Additional()
-// {
-
-// }
-
-// Day20Additional::~Day20Additional()
-// {
-
-// }
+    hp = 0;
+}

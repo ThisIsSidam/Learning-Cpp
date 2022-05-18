@@ -1,24 +1,32 @@
 // --------------------------------------
 // Author- Anshu Kumar Singh a.k.a. Sidam
 // Purpose- Notes of Learning C++
-// Date - 29/04/2022
+// Date - 16/05/2022
 //
 // Day20 Of Learning C++
 // --------------------------------------
 
 
+
 #include <iostream>
+#include <string>
 #include "Day20Additional.h"
+// #include "Day20Additional.cpp"
 
 int main()
 {
+    Day20Additional hero;
+    hero.set_name("Hero");
+    std::cout << hero.get_name() << std::endl;
 
-    Day20Additional franky;
-    franky.set_name("Frank");
-    franky.set_age(77);
-    std::cout << franky.get_name() << std::endl;
-    std::cout << franky.get_age() << std::endl;
+    hero.set_hp(89);
+    std::cout << hero.get_hp() << std::endl;
 
+    hero.double_hp();
+    std::cout << hero.get_hp() << std::endl;
+
+    hero.null_hp();
+    std::cout << hero.get_hp() << std::endl;
+    
     return 0;
-
-};
+}
