@@ -5,6 +5,8 @@ Purpose - Notes of Learning C++
 Contents Of Learning C++ 
 -------------------------------------
 
+
+--Section 1- Basics--
 Day1- Introducton, Base code of C++ and Comments.
 
 Day2- Standard Library, Input and Output with Cin and Cout.
@@ -17,6 +19,8 @@ Day5- Sizeof operator, MIN and MAX, Constants and its types.
 
 Problem1- Frank Room Cleaning Service.
 
+
+--Section 2- Arrays, Vectors and Operators--
 Day6- Compound Datatypes, Arrays, Indexing and Multilevel Arrays.
 
 Day7- Vectors, Bounds Checking, Some Methods and Multilevel Vectors.
@@ -30,13 +34,17 @@ Day10- Equality, Relational and Logical operator along with Short-Circuit Evalua
 
 Problem2- Cash Counter.
 
+
+--Section 3- Program Flow--
 Day11- If-Else and Switch-Case statements along with Conditional operator.
 
 Day12- For, While and Do-While Loops, along with Break, Continue and Infinite Loops.
 
 Problem3- List Handler.
 
-Day13- Character Funcitons, C Style Strings and Some of its Functions.
+
+--Section 4- Strings--
+Day13- Character Functions, C Style Strings and Some of its Functions.
 
 Day14- C++ Strings and their Functions.
 
@@ -44,6 +52,8 @@ Problem4- Substitution Cipher.
 
 Problem5- Letter Pyramid.
 
+
+--Section 5- Functions--
 Day15- Functions, Defining a Functions, Function Prototypes, Default Parameters and Overloading 
        a Function.
 
@@ -52,6 +62,8 @@ Day16- Passing Arrays, Passing by reference, Scopes, Call Stack Memory Allocatio
 
 Problem6- List Handler 2.
 
+
+--Section 6- Pointers--
 Day17- A problem and then Pointers, Dereferencing, Heap Memory Allocation and Notation.
 
 Day18- Pointer Arithmetic, Const Pointers, Passing Pointers in functions, Returning pointers 
@@ -59,5 +71,31 @@ Day18- Pointer Arithmetic, Const Pointers, Passing Pointers in functions, Return
 
 Problem7- List Multiplier.
 
-Day19- Procedural Programming Summary, OOP, Classes, Objects, Default Attributes, Accessing Class 
-       Data, Access Modifiers, Methods, Setters and Getters.
+
+--Section 7- Object Oriented Programming--
+Day19- Procedural Programming Summary, OOP, Classes, Objects, Default Attributes, Accessing 
+       Class Data, Access Modifiers, Methods, Setters and Getters.
+
+Day20- The Proper Way of Making and Using Classes.
+Additional Files- Day20Additional.h and Day20Additional.cpp
+
+Day21- Constructors, Destructors, Real Initialiazation, Delegating Constructors and Default 
+       Constructor Parameters.
+
+Day22- Copy Constructors, Shallow and Deep Copy, Move Constructors and Copy Ellision. 
+
+Day23- The "this" Keyword, Const Correctness, Static Class Members, Structs VS Classes and
+       Friends of a Class.
+
+Problem8- The Movie Manager.
+Additional Files- Movie.h, Movie.cpp, Movies.h and Movies.cpp
+
+Day24- Overloading Assignment Operator and Overloading other Unary and Binary operators
+       as Member Methods.
+Additional Files- Mystring.h, Mystring.cpp
+
+Day25- Overloading Unary and Binary Operators as Global Functions.
+Additional Files- Mystring2.h, Mystring2.cpp
+
+Day26- Overloading Stream Insertion and Exertion operators.
+Additional Files- Mystring3.h, Mystring3.cpp
