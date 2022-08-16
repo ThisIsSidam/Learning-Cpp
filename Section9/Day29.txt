@@ -1,0 +1,68 @@
+--------------------------------------
+Author- Anshu Kumar Singh a.k.a. Sidam
+Purpose- Notes of Learning C++
+Date - 04/08/2022
+
+Day29 Of Learning C++
+--------------------------------------
+
+--Using and Redefining Base Class Methods--
+
+Derived class can directly invoke Base class methods.
+Derived class can override or redefine Base class methods.
+It is very powerful in context of Polymorphism which we'll learn in
+nex section. Let's see an example of how we can do this-
+
+class Account {
+    void deposit (double amount) {
+        balance += amount;
+    }
+}
+
+class Savings_Acc : public Account {
+    void deposit (double amount) {
+        amount += amount * 5/100;
+        Account::deposit(amount);
+    }
+}
+
+Let's assume that these two classes exists, Accounts and Savings_Acc.
+In account, deposits go normally, but in Savings, deposits get a 5% 
+boost. So, in the derived class we just add the 5% to the amount and
+leave the amount in the hands of base class deposit method to do the 
+work. And we defined that method. 
+
+--Static Binding of Method Calls--
+
+- By default, C++ matches a function call with the correct function 
+definition at compile time, this is called static binding.
+- Default binding for C++ is Static.
+- You can understand it this way, 
+
+base_obj.depost();
+derived_obj.deposit();
+
+Both the base class and derived class has a deposit function but 
+which one to use is decided by the compiler at runtime seeing 
+what the object is of and the parameters.
+
+-This will become much more powerful when we use dynamic binding in 
+next section.
+
+--Multi Inheritence--
+- This happens when a derived class  inherits two or more classes at
+the same time.
+- The base may belong to unrelated class hierarchies. 
+
+Ex- 
+
+class  Head_Teacher: 
+    public Teacher, public Human {};
+
+Here, we see that Head_Teacher is a Teacher and also a Human. Adding 
+the human class maybe too broad but that was just for an example.
+
+- We won't be studying this in this course and we'll leave it for later.
+- It has some compelling uses.
+- It can easily be misused.
+- Can be very complex.

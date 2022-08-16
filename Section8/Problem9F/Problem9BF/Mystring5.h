@@ -8,9 +8,9 @@ class Mystring5
     friend std::ostream& operator<< (std::ostream &os, Mystring5 &rhs);
 
     friend Mystring5 operator+ (const Mystring5 &lhs, const Mystring5 &rhs);
-    friend Mystring5 operator+= (Mystring5 &lhs, const Mystring5 &rhs);
+    friend Mystring5& operator+= (Mystring5 &lhs, const Mystring5 &rhs);
     friend Mystring5 operator* (const Mystring5 &lhs, int n);
-    friend Mystring5 operator*= (Mystring5 &lhs, int n);
+    friend Mystring5& operator*= (Mystring5 &lhs, int n);
     friend bool operator== (const Mystring5 &lhs, const Mystring5 &rhs);
     friend bool operator!= (const Mystring5 &lhs, const Mystring5 &rhs);
     friend bool operator> (const Mystring5 &lhs, const Mystring5 &rhs);

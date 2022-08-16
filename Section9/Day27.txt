@@ -1,0 +1,189 @@
+--------------------------------------
+Author- Anshu Kumar Singh a.k.a. Sidam
+Purpose- Notes of Learning C++
+Date - 20/07/2022
+
+Day17 Of Learning C++
+--------------------------------------
+
+--Inheritence--
+With inheritence we are able to create new classes from existing classes. You know those moments 
+when you have to create a class that is pretty much like a different class you know of. So With
+this, you can make a new class which has data and behavior of another existing class.
+
+Good thing is you don't have to keep it exactly the same, you can modify the behavior or the new
+class. This will make the new class unique and won't alter the existing class.
+
+Some examples of related classes like this can be- Player, Enemy, Level boss, all these have common
+attributes like HP, and Level and stuff. Another example can be- Account, Saving Account, Checking 
+Account, Trust Account, all these can be inherited from Account classes and can have common attributes
+like, balance, withdraw and deposit.
+
+This is how it's made- 
+Existing Class- Account
+
+class savings : public Account {
+    ...
+}
+
+We won't be studing the practical stuff for now, just a bit of theory.
+There are two types of Inheritence-
+a. Single Inheritence- A class is inherited from a single class.
+b. Multiple Inheritenc- A class is inherited from two or more classes.
+
+--------
+
+The class that another class is extended/inherited from is called Base/Parent/Super Class.
+The class that is extended/inherited is called Derived/Child/Sub Class.
+
+The commonly used notation is like this- 
+
+      ---------                --------
+      |Derived| -------------> | Base |
+      ---------                --------
+
+Pretend that those loosely made box like thingies are boxes. So, Derived class gets a box and 
+the base class gets a box. And an arrow with a triagle head( Here, a greater than symbol) is used
+to point from Derived box to the Base class Box. It would be like this-
+
+
+      -----------------                -----------
+      |Savings Account| -------------> | Account |
+      -----------------                -----------
+
+In inheritence the, relationship is called, "Is-A" relationship. For ex-
+a. A Savings Account is a Account
+b. Square is a Shape; Square is a class derived from Shape class.
+
+--------
+Now some terms we should know-
+
+Generalization- Combining Similar classes into single, general class based on common attributes.
+
+Specialization- Creating a new class from existing class providing more specialized attributes.
+
+Class Hierarchies- Organization of our inheritence relationship.
+
+Ex-
+
+                --------
+                |   A  |
+                --------
+                   ^
+                   |
+                   |
+        -------------------------    
+        |                       |
+      -----                  -----
+      | B |                  | C |  
+      -----                  -----
+                               ^
+                               |
+                    ------------------------
+                    |                      |     
+                  -----                  -----
+                  | D |                  | E |
+                  -----                  -----
+
+Here, Class D and E are derived from C. While C and B are Derived from A.
+We can say that, D is a C, E is a C. B is a A, C is a A. But, we can't say that C is a B, B is a D.
+We can even say that D is a A or E is a A. Parent class of a Parent class is also a parent class.
+
+For, better understanding-
+
+                --------
+                |Person|
+                --------
+                   ^
+                   |
+                   |
+        -------------------------    
+        |                       |
+    ---------                ----------
+    |Student|                |Employee|  
+    ---------                ----------
+                                 ^
+                                 |
+                    ------------------------
+                    |                      |     
+                -------              ---------------
+                |Staff|              |Administrator|
+                -------              ---------------
+
+Here, super sense making things. The relationship is a Staff is a Employee, an Administrator is a Employee.
+A Staff is a Person, an Administrator is a Person. A Student is a Person. But, A Student is not an Employee or
+A Student is not an Administrator. Note, that at certain places I have used 'a' instead of "an" because I had 
+to write it as the relationship "Is-A".
+
+--Public Inheritence VS Composition--
+
+-Both allow reuse of existing classes.
+
+-Public Inheritence has "Is-A" relationship.
+
+-Composition has "Has-A' relationship.
+I think that might need some explanation. We have been using this for a long time now and ya without knowing
+about it. These are done via attributes that we give classes and not by some different way like we inherit 
+classes. Ex-
+
+class Staff : Employee {
+  private: 
+    string name;
+    Account acc;
+}
+
+Now, here we see that the Staff class is derived from Employee class, so we can say that a Staff is a Employee.
+At the same time we have made atributes that use other classes. That is Composition. We can say that a Staff 
+has a string(name)(Don't forget that string is also a class that we got to know of even before studying classes), 
+a Staff has a Account. You can see the "Has-A" relationship there.
+
+--Syntax--
+
+class Base{
+  // Base class members
+};
+
+class Derived: Access_Specifier Base {
+  // Derived class members
+};
+
+That is how you create derived classses. Now the question is Access Specifiers. We have seen two of those before, 
+private and public. But, there's one more, protected.
+
+Public- All data is accessible from class members and also, derived class members. "Is-A" relationship is
+established between the derived and base class.
+Private- Data is inaccessible from all but the class.
+Protected- Data is Private, unless Inheritence is involved. Data is accessible from the class and also from the
+derived class but not by the objects of derived class. Both Private and Protected Specifiers establish a "Has-A"
+relatioinship between the base and derived classes. This is different from Compositions. And we will only be 
+studing publich specifier for now. 
+
+--Working of Constructors and Destructors--
+
+All derived objects have a base class part in it. You can imagine it like a box in a box. So, when a derived 
+object is created the base class Constructor executes first and then the derived part.
+
+In case of Destructors, the opposite happens. Fist the derived part is cleared up and then the base part. Each 
+Destructor should free resources allocated by their Constructor.
+
+--What's not inherited?--
+
+In inheritence, not everything is inherited. Some things are left behind-
+a. Base Class Constructor
+b. Base Class Destructor
+c. Base Class Overloaded Assignment Operator
+d. Base Class Friend Functions
+
+However, the derived class can invoke the base class versions of these(except Friends Functions).
+
+C++ allows explicit inheritence of base "non-special" Constructos with using Base::Base; anywhere
+in derived class declaration. However, there are lots of rules involved to this, like, 
+-Default copy is not inheritd. 
+-Each inherited constructor has the same access specifier as corresponding the the base class.
+-If you provide an overloaded constructor in derived class then the base class overloaded 
+constructor isn't inherited.
+-A base class's constructor default argument aren't inherited.
+-And lots more other rules.
+
+And hence, it is not recommended to use it.
+

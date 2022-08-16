@@ -5,7 +5,6 @@ Purpose - Notes of Learning C++
 Contents Of Learning C++ 
 -------------------------------------
 
-
 --Section 1- Basics--
 Day1- Introducton, Base code of C++ and Comments.
 
@@ -90,6 +89,8 @@ Day23- The "this" Keyword, Const Correctness, Static Class Members, Structs VS C
 Problem8- The Movie Manager.
 Additional Files- Movie.h, Movie.cpp, Movies.h and Movies.cpp
 
+
+--Sectin 8- Overloading Operators--
 Day24- Overloading Assignment Operator and Overloading other Unary and Binary operators
        as Member Methods.
 Additional Files- Mystring.h, Mystring.cpp
@@ -99,3 +100,23 @@ Additional Files- Mystring2.h, Mystring2.cpp
 
 Day26- Overloading Stream Insertion and Exertion operators.
 Additional Files- Mystring3.h, Mystring3.cpp
+
+Problem9A- Mass Overload MM (Member Methods)
+Additional Files- Mystring4.h, Mystring4.cpp
+
+Problem9B Mass Overload GF (Global Functions)
+Additional Files- Mystring5.h, Mystring5.cpp 
+
+
+--Section 9- Inheritence--
+Day27- Introducton, Hierarchies, Syntax and Terminology.
+
+Day28- Invoking Base Class Constructor in Derived Class, and Working of Copy and Move 
+       Constructor and Overloaded Assignment operator with Inheritence.\
+
+Day29- Using and Redefining Base Class Methods, Static Binding of Method Calls, and 
+       Multi Inheritence.
+
+Problem10- Lots of Accounts
+Additional Files- Accounts.h, Accounts.cpp, Acc_Util.h, Acc_Util.cpp
+

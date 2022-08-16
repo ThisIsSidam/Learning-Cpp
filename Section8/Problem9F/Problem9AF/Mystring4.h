@@ -20,9 +20,9 @@ public:
     Mystring4& operator=(const Mystring4 &rhs);
     Mystring4& operator=(Mystring4 &&rhs);
     Mystring4 operator+(const Mystring4 &rhs);
-    Mystring4 operator+=(const Mystring4 &rhs);
+    Mystring4& operator+=(const Mystring4 &rhs);
     Mystring4 operator*(int rhs);
-    Mystring4 operator*=(int rhs);
+    Mystring4& operator*=(int rhs);
     bool operator== (const Mystring4 &rhs);
     bool operator!=(const Mystring4 &rhs);
     bool operator>(const Mystring4 &rhs);

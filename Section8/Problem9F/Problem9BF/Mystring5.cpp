@@ -9,7 +9,7 @@ Mystring5::Mystring5()
 
 Mystring5::Mystring5(const char *str) 
     : text{nullptr} {
-        if (*text == *str) {
+        if (str == nullptr) {
             text = new char [1];
             *text = '\0';
         }

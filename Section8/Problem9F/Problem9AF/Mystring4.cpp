@@ -14,7 +14,7 @@ Mystring4::Mystring4()
 // Overloaded Constructor
 Mystring4::Mystring4(const char *str)
     : text{nullptr} {
-        if (*text == *str) {
+        if (str == nullptr) {
             text = new char[1];
             *text = '\0';
         }
@@ -76,7 +76,7 @@ Mystring4 Mystring4::operator+(const Mystring4 &rhs) {
     return temp;
 }
 
-Mystring4 Mystring4::operator+=(const Mystring4 &rhs) {
+Mystring4& Mystring4::operator+=(const Mystring4 &rhs) {
     *this = *this + rhs;
     return *this;
 }
@@ -92,45 +92,25 @@ Mystring4 Mystring4::operator*(int rhs) {
     return temp;
 }
 
-Mystring4 Mystring4::operator*=(int rhs) {
+Mystring4& Mystring4::operator*=(int rhs) {
     *this = *this * rhs;
     return *this;
 }
 
 bool Mystring4::operator==(const Mystring4 &rhs) {
-    if (std::strcmp(text, rhs.text)) {
-        return 1;
-    }
-    else {
-        return 0;
-    }
+    return (std::strcmp(text, rhs.text) == 0);
 }
 
 bool Mystring4::operator!=(const Mystring4 &rhs) {
-    if (std::strcmp(text, rhs.text)) {
-        return 0;
-    }
-    else {
-        return 1;
-    }
-}
-
-bool Mystring4::operator<(const Mystring4 &rhs) {
-    if (text < rhs.text) {
-        return 1;
-    }
-    else {
-        return 0;
-    }
+    return (std::strcmp(text, rhs.text) != 0);
 }
 
 bool Mystring4::operator>(const Mystring4 &rhs) {
-    if (text > rhs.text) {
-        return 1;
-    }
-    else {
-        return 0;
-    }
+    return (std::strcmp(text, rhs.text) > 0);
+}
+
+bool Mystring4::operator<(const Mystring4 &rhs) {
+    return (std::strcmp(text, rhs.text) < 0);
 }
 
 Mystring4 Mystring4::operator-() {
