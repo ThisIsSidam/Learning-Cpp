@@ -5,7 +5,7 @@
 //
 // Problem10 of Learning C++
 // After Day29
-// Name- Lots of Accounts
+// Name- Lots Of Accounts
 // --------------------------------------
 
 /*

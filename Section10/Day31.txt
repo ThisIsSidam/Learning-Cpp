@@ -1,0 +1,101 @@
+--------------------------------------
+Author- Anshu Kumar Singh a.k.a. Sidam
+Purpose- Notes of Learning C++
+Date - 18/08/2022
+
+Day31 Of Learning C++
+--------------------------------------
+
+--Using Base Class References--
+-We can also use Base class references with dynamic Polymorphic.
+-It's useful when we pass object to function that expect a Base class reference.
+
+Ex-
+void do_withdraw(Account &acc, double amount) {
+    acc.withdraw(amount);
+}
+
+Account a;
+do_withdraw(a, 1000); -----> Account class withdraw function
+
+Trust T;
+do_withdraw(T, 2990); -----> Trust class withdraw function
+
+There's nothing more and special into this, it's just a nice thing that you can do.
+
+--Pure virtul function and Abstract Class--
+
+-Abstract Class-
+- Cannot instantiate objects; you cannot create it's objects.
+- These classes are used as base classes in inheritence hierarchies.
+- Often referred to as Abstract Base Classes.
+- Contains atleast one Pure Virtual Function.
+
+- It's too generic to create objects from, like there is an Account class, Savings and all.
+When you create an account, you create a type of account, savings, trust or something. So, a 
+class like Account is just used as a Base.
+
+-Concrete Classes-
+- Used to instantiate objects from.
+- All their member functions are to be defined.
+- We've been using these all this time.
+
+-Pure Virtual Function-
+- Used to make a class Abstract.
+- Specified with "= 0" in its declaration.
+
+virtual void name() = 0; ---> PURE
+
+- Typically do not provide implementation. You can provide implementation but since
+it's made to be overriden, it can be left out.
+- Derived classes must override base class in order to be concrete.
+- If that function is not overriden then that derived class will also be Abstract.
+
+--Abstract classes as Interfaces--
+- Interface is a feature in languages like java and C# which isn't available in C++.
+So, we use Abstract classes to create interfaces.
+
+- Think it like this, we want to be able to provide printable support for any object we 
+wish without knowing it's implementation at compile time. 
+
+std::cout << any_obj;
+
+Then any_obj must confirm to the Printable interface. Like if we want to print an object, 
+we have to add the output stream operator (<<) as friend to that object's class, and we 
+have to do it for all derived classes if there is inheritence involved since friend 
+functions can't be inherited. That will make things way long. 
+
+Instead we can make an Interface named printable and do things with this-
+
+class Printable {
+    friend std::ostream& operator<< (std::ostream &os, const Printable &obj);
+    public:
+        virtual void print(std::ostream &os) const = 0;
+        virtual ~Printable();
+}
+
+std::ostream& operator<<(std::ostream &os, const Printable &obj) {
+    obj.print(os);
+    return os;
+}
+
+class Any_Class: public Printable {
+    public:
+        virtual void print(std::ostream &os) const override {
+            os << "HI from Any_Class" << '\n';
+        }
+}
+
+That would be the code for the Printable Interface. Since we can't inherit friend functions
+we make that friend function ask for a virtual function of the class which is 
+overriden by the derived classes. They give their data through the virtual function
+that is sent to the overloaded operator and printed out. And what data is printed out 
+is actually handled by the derived classes, they handle what to give for printing and 
+what to not.
+
+This is just an example of an interface that we'll be using there can be more if you search
+for them.
+
+Note- It is a general thing to name the Interface class like this- I_printable Adding I and 
+an underscore before the actual class name, it reminds that this class is an interface. We'll 
+be using this too.

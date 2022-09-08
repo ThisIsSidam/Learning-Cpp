@@ -1,0 +1,159 @@
+--------------------------------------
+Author- Anshu Kumar Singh a.k.a. Sidam
+Purpose- Notes of Learning C++
+Date - 16/08/2022
+
+Day30 Of Learning C++
+--------------------------------------
+
+Note- I'll be using the term "Function" instead of "Method" many times, so
+ignore it, and they are pretty much the same thing, so there isn't anything 
+wrong in this.
+
+--Polymorphism--
+is a fundamental part of OOP. It has two types.
+
+1. Compiler time Polymorphism which has Early Binding or Static Binding.
+
+- In this Compiler takes care of things way before the program runs.
+
+- This consists of Overloading of function and Overloading of operators.
+
+2. Run time Polymorphism which has late binding or Dynamic Binding.
+
+- With this we are capable of assigning different meangings to the same 
+function at runtime.
+
+- C++ has to be fast so static binding is better since it completes things 
+way before program execution and there is nothing to be done at runtime, 
+but sometimes we need to do stuff at runtime.
+
+- This consists of Overriding(not overloading) of function.
+
+Note - Overloading of function is making different functions with same name 
+but different return type and parameters so the compiler decides which to 
+use according to parameters with Static Binding. Overriding is used with 
+inheritence where a function in base class is used in Derived class with some 
+added functionality. Return type and parameters also need to be the same as of 
+Base class.
+
+Ex1- Suppose Account is a base class and Trust is a derived class.
+
+Accout *p = new Trust(5000);
+P->withdraw(1000);
+
+Here, Trust is also a Account so we can create it this way but P still
+is a pointer to Account class object, so Account class withdraw function 
+will be called where we needed the Trust class withdraw function.
+
+Ex2-
+void display_acc(Account &acc){
+    acc.display();
+} 
+
+In this function, we give Account class object references and if we give 
+Trust class object it should use the Trust class display function but no, 
+since the reference taken is of Account class, even though we give a 
+reference to a derived class object, it would always use the Base class 
+whcih is Account class's display function. This is static binding, if it
+were dynamic we would see derived class which is Trust account's display 
+function execute.
+
+Tip: You can think it this way that in static binding, all the class stuff 
+is compiled as they are directed to with their parameters, like if the 
+parameter is Account class reference, then that function is connected to that
+function of Account class and it doesn't care about the the stuff in "main" 
+that we have to run. But in dynaminc binding the function is not connected with 
+anything, it waits for what the argument is and decides for which class's function
+to connect with. An even simpler way to understand is that, your friend messaged 
+you that you and some other friends will go for party tonight and you'll hit 
+multiple places. So, you just go to the usual place you guys go to first normally 
+and meet everyone there, that is Static binding. In dynamic binding's case, you 
+wait at a place, meet up with everyone and then you all friends decide where to 
+go first.
+
+Now, let's learn how to use dynamic binding.
+
+--Virtual Functions--
+are overriden and they allow us to treat all object generaly as object of Base class.
+
+- To make a function virtual, we've to use the keyword "virtual".
+- Virtual functions are virtual all the way down the hierarchy.
+
+Syntax-
+{ Public:
+    virtual void withdraw(double);
+} Yup, just put "virtual" at the start.
+
+- Function signature and return type should match exactly or the compiler will treat 
+it as an overloaded function and use static binding on it.
+- From here on down the hierarchy, that function will be virtual and you don't need to 
+put the virtual keyword on the other ones, but it is best practice to do so. 
+- Virtual functions are dynamically bound only when called via base class pointer or
+reference, otherwise they are statistically bound.
+
+--Virtual Destructors--
+- There is a problem with destroying Polymorphic objects. If a derived class is 
+destroyed by deleting it's storage via the base clas pointer and class a non-virtual 
+destructor, then the behavior is undefined in C++ standard. 
+
+- Derived object must be destroyed in correct order starting at the correct destructor.
+
+Solutin/Rule- 
+- If a class has virtual function, always provide a public virtual destructor.
+- If Base class destructor is virtual then all derived class destructor are also virtual.
+
+Syntax-
+
+virtual ~Accont(); --> Virtual destructor for Account class.
+
+--Override Specifier--
+- We know that if the signature or return type of overriden function is not the same 
+as that of the base class function then it is not overriden.
+- It's overloaded and it's statistically bound. 
+- C++11 provides a override specifier to have compiler ensure overriding.
+
+Syntax-
+
+Base class func- virtual void say_hello() const;
+
+Derived class func- virtual void say_hello();
+- Here, we forgot the const in the end and it's not overriden now.
+
+Derived class func- virtual void say_hello() override;
+- Here, the mistake still exists but we'll not get an error telling us that.
+
+Derived class func- virtual void say_hello() const override;
+- Perfect.
+
+--Final Specifier--
+
+- When used at class level, it prevents a class from being derived from, meangings
+there can't be any more derived classes down the hierarchy from here.
+
+Syntax-
+
+From a non-derived class(sole class in hierarchy)-
+class My_class final {
+    ...
+}
+
+From a derived class-
+class Other_class final: public Some_class {
+    ...
+}
+
+- When used at method level, it prevents vitual methods from being overriden 
+in derived class.
+
+Syntax-
+
+class A {
+    public:     
+        vitual void do() final;
+}
+
+class B: public A {
+    public:
+        virtual void do(); ---> This will give compiler error.
+}
