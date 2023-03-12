@@ -6,6 +6,7 @@ Contents Of Learning C++
 -------------------------------------
 
 --Section 1- Basics--
+
 Day1- Introducton, Base code of C++ and Comments.
 
 Day2- Standard Library, Input and Output with Cin and Cout.
@@ -17,9 +18,12 @@ Day4- Primitive Datatypes- Int, Char, Float and Bool.
 Day5- Sizeof operator, MIN and MAX, Constants and its types.
 
 Problem1- Frank Room Cleaning Service.
+---------------------
+
 
 
 --Section 2- Arrays, Vectors and Operators--
+
 Day6- Compound Datatypes, Arrays, Indexing and Multilevel Arrays.
 
 Day7- Vectors, Bounds Checking, Some Methods and Multilevel Vectors.
@@ -32,17 +36,23 @@ Day10- Equality, Relational and Logical operator along with Short-Circuit Evalua
        Assignment and Precedence and Associativity.
 
 Problem2- Cash Counter.
+--------------------------------------------
+
 
 
 --Section 3- Program Flow--
+
 Day11- If-Else and Switch-Case statements along with Conditional operator.
 
 Day12- For, While and Do-While Loops, along with Break, Continue and Infinite Loops.
 
 Problem3- List Handler.
+---------------------------
+
 
 
 --Section 4- Strings--
+
 Day13- Character Functions, C Style Strings and Some of its Functions.
 
 Day14- C++ Strings and their Functions.
@@ -50,9 +60,12 @@ Day14- C++ Strings and their Functions.
 Problem4- Substitution Cipher.
 
 Problem5- Letter Pyramid.
+----------------------
+
 
 
 --Section 5- Functions--
+
 Day15- Functions, Defining a Functions, Function Prototypes, Default Parameters and Overloading 
        a Function.
 
@@ -60,18 +73,24 @@ Day16- Passing Arrays, Passing by reference, Scopes, Call Stack Memory Allocatio
        Recursions.
 
 Problem6- List Handler 2.
+------------------------
+
 
 
 --Section 6- Pointers--
+
 Day17- A problem and then Pointers, Dereferencing, Heap Memory Allocation and Notation.
 
 Day18- Pointer Arithmetic, Const Pointers, Passing Pointers in functions, Returning pointers 
        from a function, Pointer Pitfalls, Reference and L-values and R-values.
 
 Problem7- List Multiplier.
+-----------------------
+
 
 
 --Section 7- Object Oriented Programming--
+
 Day19- Procedural Programming Summary, OOP, Classes, Objects, Default Attributes, Accessing 
        Class Data, Access Modifiers, Methods, Setters and Getters.
 
@@ -88,9 +107,12 @@ Day23- The "this" Keyword, Const Correctness, Static Class Members, Structs VS C
 
 Problem8- The Movie Manager.
 Additional Files- Movie.h, Movie.cpp, Movies.h and Movies.cpp
+------------------------------------------
+
 
 
 --Sectin 8- Overloading Operators--
+
 Day24- Overloading Assignment Operator and Overloading other Unary and Binary operators
        as Member Methods.
 Additional Files- Mystring.h, Mystring.cpp
@@ -106,9 +128,12 @@ Additional Files- Mystring4.h, Mystring4.cpp
 
 Problem9B Mass Overload GF (Global Functions)
 Additional Files- Mystring5.h, Mystring5.cpp 
+-----------------------------------
+
 
 
 --Section 9- Inheritence--
+
 Day27- Introducton, Hierarchies, Syntax and Terminology.
 
 Day28- Invoking Base Class Constructor in Derived Class, and Working of Copy and Move 
@@ -119,4 +144,69 @@ Day29- Using and Redefining Base Class Methods, Static Binding of Method Calls, 
 
 Problem10- Lots of Accounts
 Additional Files- Accounts.h, Accounts.cpp, Acc_Util.h, Acc_Util.cpp
+--------------------------
 
+
+
+--Section 10- Polymorphism--
+
+Day30- Polymorphism, Virtual Functions and Destructors, Override and Final
+       Specifier.
+
+Day31- Using Base Class References, Abstract and Concrete Classes, Pure Virtual
+       Functions and Abstract Classes as Interfaces.
+
+Problem11- Lots of Accounts 2
+Additional Files- Account.cpp, Account.h, Checking_Acc.cpp, Checking_Acc.h,
+                  Savings_Acc.cpp, Savings_Acc.h, Trust_Acc.cpp, Trust_Acc.h,
+                  Acc_Util.cpp, Acc_Util.h, I_Printable.cpp and I_Printable.h.
+----------------------------
+
+
+--Section 11- Smart Pointers--
+
+Day32- Raw and Smart Pointers, Unique and Shared Pointers.
+
+Day33- Weak Pointers and Reference Cycle Problem.
+
+Problem12- What of What?
+-----------------------------
+
+
+
+--Section 12- Exception Handling--
+
+Day34- Exception Handling, Catch All Handler, User Defined Exception Classes,
+       no except Keyword and Class Level Exceptions.
+Additional Files- Savings.h
+
+Day35- Stack Unwinding
+----------------------------------
+
+
+
+--Section 13- File, Streams and I/O--
+
+Day36- Input and Output Streams, Header Files, Global Stream Objects
+       and Stream Manipulators.
+
+Day37- Common Stream Manipulators.
+
+Problem13A- I am a Tour Guide
+
+Day38- Input Files
+Additional Files- Example.txt
+
+Problem13B- You Get Zero Marks
+Additional Files- Responses.txt
+
+Problem13C- Find it the Hard Way
+Additional Files- RomeoJuliet.txt
+
+Day39- Output Files and Copying Entire Files.
+
+Problem13D- Number 'em All
+Additional Files- RomeoJuliet.txt
+
+Day40- String Streams and Data Validation.
+-------------------------------------

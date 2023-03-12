@@ -1,0 +1,79 @@
+--------------------------------------
+Author- Anshu Kumar Singh a.k.a. Sidam
+Purpose- Notes of Learning C++
+Date - 02/03/2023
+
+Day36 Of Learning C++
+--------------------------------------
+
+Hello there, I have picked this up after months. And we're starting with
+
+== Input and Output Streams ==
+
+C++ uses streams as interface between program and I/O devices. The basic thing is that
+whatever we output, first goes to the stream and then to the output device and whatever
+we input through the input device, first reaches the stream and then to the program. 
+
+Streams are sequence of bytes independent of actual device. There are streams that do
+input, output and ones that do both.
+
+= Header Files =
+
+We know what header files are and also that there are a lot of them. So, let's see some
+that are related to streams.
+
+<iostream> - The one we use in every file. This one provides definitions for formatted
+            input and output from/to streams.
+
+<fstream> - This one provides definitions for formatted input and output from/to file
+            streams.
+
+<iomanip> - Provides definitions for manipulators used to format stream I/O. Meaning
+            that it alters the way we input and output things through the stream.
+
+There are some classes that we get from these files that are also super helpful to us:
+
+ios - Provides basic support for formatted and unformatted I/O operators. This is a base
+        class for most other classes.
+    
+ifstream - High level input operator on file based streams.
+ofstream - High level output operator on file based streams.
+
+fstream - High level input and output operator on file based streams. Derived from ofstream
+        and ifstream.
+
+string stream - High level input and output operator on memory based strings. Derived from
+                istreamstring and ostreamstring.
+
+= Global Stream Objects = 
+
+These are objects that initialised before main executed like normal global variables.
+
+cin - Standard input stream. By default connected to standard input device (Keyboard). 
+        Instance of istream class.
+cout - Standard output stream. By default connected to standard output device (Console).
+        Instance of ostream class. (Buffered)
+cerr - Standard error stream. By default connected to standard error device (Console).
+        Instance of ostream class. (Unbuffered)
+clog - Standard log stream. By default connected to standard log device (Console). 
+        Instance of ostream class. (Unbuffered)
+
+Note: Buffer is a storage where data is stored temperorily for some sort of formatting
+purposes. Data going to console or other output device first goes to stream then to the 
+device. But in case of buffered stream like cout, data first stop in buffer and then
+heads to stream. While in case of Unbuffered streams like cerr and clog, this doesn't 
+happen. This is just the rough idea I have about buffer, I don't totally get what it is.
+
+= Stream Manipulators = 
+
+- These have useful member functions to control formatting. 
+- These can be used on input and output streams.
+- The time of the affect on the stream varies. Like some functions affect only the 
+object on stream that comes next, while some affect all forthcoming variable and 
+objects.
+- These can be used in two ways:
+    i) As a Member func: std::cout.width(10);
+    ii) As a Manipulator: std::cout << std::setw(10);
+
+We'll be stopping for now. Next file has common stream manipulators for multiple 
+datatypes that I've planned to fit in one file.
