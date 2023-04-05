@@ -210,3 +210,54 @@ Additional Files- RomeoJuliet.txt
 
 Day40- String Streams and Data Validation.
 -------------------------------------
+
+
+
+--Section 14- Standard Template Library---------
+
+Day41- STL, Types of Containers, Iterators and Algorithms, Generic Programming,
+       and Macros.
+
+Day42- Templates and Pair Class.
+
+Day43- Literal Template Parameters, Common Functionality Offered by Containers,
+       Operations on Iterators, Reverse Iterators and Types of Iterators.
+
+Day44- Algorithms, Iterator Invalidation, Function Objects (Functors).
+
+Day45- Arrays and it's functions.
+
+Day46- Vectors and Deques.
+
+Problem14A- Palindrome.
+
+Day47- List and Forward List.
+
+Problem14B- Song Playlist.
+Additional Files- Song.h, Song.cpp
+
+Day48- Set.
+
+Day49- Map.
+
+Problem14C- A Lotta Words.
+Additional Files- words.txt
+
+Day50- Stack and Queue.
+
+Problem14D- Palindrome 2.
+
+Day51- Priority Queue.
+------------------------------------------------
+
+
+
+--Section 15- Lambda Expressions and Enumerations-------
+
+Day52- Lambda Expressions, Stateless L.E., L.E. as Function Parameters, Returning L.E.,
+Predicament Function.
+
+Day53- Statefull Lambda Expression, Capturing Modes.
+
+Day54- Enumerations, Type Safety, Unscoped and Scoped Enumerations.
+--------------------------------------------------------

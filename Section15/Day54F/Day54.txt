@@ -1,0 +1,200 @@
+----------------------------------------------
+Name- Anshu Kumar Singh a.k.a. Sidam
+Date- 31/03/23
+Purpose- Notes of C++
+
+Day54 of Learning C++
+----------------------------------------------
+
+
+== Enumerations ==
+
+- A user-defined type that models a set of constant integral values.
+
+Ex- The days of the week can be the set of constant with integral values
+assigned to them, or it can be the months of the year, etc.
+
+- The single pieces are called enumerators while the whole set is called
+enumeration.
+
+Structure:
+enum-key enum-name : enumerator-type {};
+
+enum-key : Defines the scope of the enumeration.
+           More later, for now, enum can be either scoped or un-scoped.
+           Regardless of scope, enumerations always start with "enum".
+enum-name : Optional name (for un-scoped) of the enumeration.
+enumerator-type : Can be omitted for the compiler to deduce it.
+
+{} : To be filled with the enumerator definitions.
+
+= Enumerator List =
+- All your confusions will be cleared up once you see some examples:
+
+- This is a basic one called explicit Initialisation, where we give 
+the values ourselves.
+enum {Red = 0, Blue = 1, Green = 2}; 
+
+- There's also this called Implicit Initialisation.
+enum {Red, Blue, Green}; 
+
+- Here, compiler will initialise those enumerators, the first will get
+the value zero, and it'll keep going up, Blue will get 1, and Green
+will then get 2.
+
+- We can also mix them up called, Explicit/Implicit Initialisation.
+enum {Red = 3, Blue, Green};
+
+- We give the first value and then the others are increased by one. Blue 
+gets 4 here and Green gets 5.
+
+= Enumeration Type =
+
+- We can leave this as the compiler can figure it out. But What in the case
+of implicit initialisation where we don't give values.
+
+- The values are integers, so they all can't be ints. That is wrong since there
+are also long, long long and thier unsigned versions. In case of Implicit
+init. the compiler uses int, as it always prefers signed versions. long and
+long long are used in cases of Explicit/Implicit init according to the Explicit
+value.
+
+- We can also just give a data type when we don't want the compiler to select it
+itself. Something like this:
+
+enum : long {Red, Blue, Green};
+
+= Type Safety =
+
+- Nameless enumerations are referred to as Anonymous Enumerations. There is a 
+lot of help that we can get by naming enumerations.
+
+- We can initialise a variable of an enumeration type with its name. And then only 
+an enumerator can be assigned to it. You might think, why would someone do that, but
+sometimes we don't want a variable to get any value. 
+
+- With anonymous enumerations, we can do this by making variables of the enumeration's
+underlying type (Enumeration's type). But again, any value of that type can be assigned
+to it. 
+
+Ex- Days of week, all days have an assigned number 1 to 7, and we make a variable 
+"week number". Here if that variable is of int, we can assign any number to it, like 9, 
+is there a 9th day in a week. No, but if that variable were of an enumeration's type. 
+We could assign it any enumerator, monday or sunday and it will only hold values, 1 to 7.
+
+- This is called Type Safely that only named enumerations have.
+
+Ex- 
+enum Color {Red, Blue, Green};
+Color my_color = Red;
+
+- Now that my_color variable can't be assigned something like 4. It's type safe now.
+
+= Taking Enumeration Type Variable Input = 
+
+- When we take input to a variable of an enumeration type, we get error because the 
+extraction operator (>>) doesn't know of that type. 
+
+- There are two ways to deal with this.
+
+i) Take input to a variable of the underlying type of that enumeration, and then assign
+the value to the enumeration type variable. 
+
+Ex- If we know what the underlying type of the enumeration is. We can just make a variable
+of that type and use it to take input, but when we don't know the underlying type we can 
+do this:
+
+std::underlying_type_t<enumeration_name> variable_name;
+
+And assign it like this:
+Color my_color = Color(variable_name);
+
+We are in a way type casting it.
+
+Know that the input should be the enumerator value and not the name. We still have a problem
+as it may happen that the value we took doesn't correspond to any enumerator in the enumeration.
+The value may be 9 in the Week enumeration. This is a problem. So, we can run a switch-case 
+statement and perform checks to see if the value corresponds to any of the enumerator or not.
+And this switch-case ladder can be large according to your enumerator list.
+
+Which could look something like this:
+
+Note: I am doing all cases in single lines. And am not using any {}.
+
+switch (user_input) {
+    case Red : enumeration_variable = enumeration_name(user_input); break; 
+    case Blue : enumeration_variable = enumeration_name(user_input); break; 
+    case Green : enumeration_variable = enumeration_name(user_input); break; 
+    default : std::cout << "Input not Valid";
+}
+
+ii) Overload the extraction operator.
+
+We can directly overload the operator to not do all that multiple times, and do it all
+just once at at single place.
+
+std::istream& operator>> (std::istream &is, Color &my_color) {
+    std::underlying_type_t<Color> user_input;
+    is >> user_input;
+
+    switch (user_input) {
+        case Red : enumerator_variable = enumeration_name(user_input);
+        case Blue : enumerator_variable = enumeration_name(user_input);
+        case Green : enumerator_variable = enumeration_name(user_input);
+        default : std::cout << "Input not valid";
+    }
+
+    return is;
+}
+
+= Outputs with Enumeration variables =
+
+- Normally, the value is displayed, we don't have to do anything. But we might need to 
+know the enumerator name from a enumeration variable. Like, if my_color has 1, and we want 
+to know which color does it correspond to. So, we can overload the insertion operator 
+something like this.
+
+std::ostream& operator<< (std::ostream &os, const Color &my_color) {
+    os << my_color;
+
+    switch (my_color) {
+        case Red: std::cout << "Red"; break;
+        case Blue: std::cout << "Blue"; break;
+        case Green: std::cout << "Green"; break;
+        default : std:cout << "Unknown";
+    }
+    return os;
+}
+
+or just run the switch-case ladder in the code. But overloading the operator is way better 
+as you won't have to do it ever again in that program.
+
+Note: If there are two enumerations with same enumerator, the program won't compiler. Ex- An
+enumeration Color with Orange enumerator and a Fruit enumeration with Orange enumerator. They
+have same names, and the compiler won't be able to deduce which enumeration it is from. This
+is solved with Scoped enumerations.
+
+= Scoped Enumerations =
+
+- Scoped enumerations have "enum class" or "enum struct" keyword in start instead of just "enum".
+
+- We are able to compare two enumerators of different unscoped enumerations, as the operator will
+use their values. Like, Blue from Color enumeration and Apple from Fruit enumeration. But isn't 
+that wrong. So, we have scoped enumerations where we can't compare values of different enumerations
+just like that. 
+
+- We can now have same name enumerators in dfferent enumerations with scoped enumerations.
+
+- We access these enumerators like this: Enumeration_Name::Enumerator
+
+- Can't just assign values like this: int my_color = Color::Red;
+
+- This happens even though the enumerator's underlying type is int. We just have to cast it.
+
+- Like this: int my_color = std::static_cast<int>(Color::red);
+
+- Or like this: int my_color = int(Color::red);
+
+- This is the end. Bye. Make some projects and put everything you learned. But only necessary 
+things as the program may become inefficient with too much things. Jaa ne!
+
