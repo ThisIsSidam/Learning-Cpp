@@ -14,5 +14,7 @@ the time. Sometimes I make multiple files a day, it's rare, but it's true.
 
 The other thing is that......... Well, I forgot what it was, but it was something, I'll edit when I remember it.
 
+Well, the course I was doing on Udemy has ended, and now I'm gonna start making some small projects. They'll be here soon.
+
 Thank you Everyone,
 Anshu Kumar Singh a.k.a. Sidam
