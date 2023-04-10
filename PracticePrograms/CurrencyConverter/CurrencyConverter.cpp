@@ -4,12 +4,11 @@
 #include <map>
 #include <exception>
 
-// To throw exception when wrong currency code is entered.
-class IllegalCurrency : public std::exception {
+class IllegalValues : public std::exception {
 
 public: 
     virtual const char* what () const noexcept {
-        return "Illegal Currency Entered\n";
+        return "Illegal Values Entered\n";
     }
 };
 
@@ -52,45 +51,45 @@ int main() {
 
         std::stringstream ss {str};
 
-        if (! (ss >> amount) )
-        {
-            if ( ss.str() == guide )
+        try 
+        { 
+            if (! (ss >> amount) )
             {
-                guidebook();
-                continue;
-            }
-            else if ( ss.str() == quit )
-            {
-                std::cout << "Goodbye!" << std::endl;
-                break;
-            }
-            else 
-            {
-                std::cout << "Illegal Values Entered!" << std::endl;
-                continue;
-            }
-        }
-        else 
-        {
-            if (! (ss >> primary_currency) )
-            {
-                std::cerr << "Illegal Currency Entered";
-            }
-            else 
-            {
-                if (! (ss >> secondary_currency) )
+                if ( ss.str() == guide )
                 {
-                    std::cerr << "Illegal Currency Entered";
+                    guidebook();
+                    continue;
+                }
+                else if ( ss.str() == quit )
+                {
+                    std::cout << "Goodbye!" << std::endl;
+                    break;
+                }
+                else 
+                {
+                    throw IllegalValues();
                 }
             }
-        }
+            else 
+            {
+                if (! (ss >> primary_currency) )
+                {
+                    throw IllegalValues();
+                }
+                else 
+                {
+                    if (! (ss >> secondary_currency) )
+                    {
+                        throw IllegalValues();
+                    }
+                }
+            }
 
-        try{
             double secondary_amount = currency_changer(amount, primary_currency, secondary_currency);
             std::cout << amount << " " << primary_currency << " = "
                     << secondary_amount << " " << secondary_currency << std::endl;
         }
-        catch (const IllegalCurrency &ex)
+        catch (const IllegalValues &ex)
         {
             std::cerr << ex.what();
         } 
@@ -137,5 +136,5 @@ double currency_changer(const double &amount, const std::string &primary, const 
         it++;
     }
 
-    throw IllegalCurrency();
+    throw IllegalValues();
 }
