@@ -4,6 +4,7 @@
 #include <map>
 #include <exception>
 
+// To throw exception when wrong currency code is entered.
 class IllegalCurrency : public std::exception {
 
 public: 
@@ -65,7 +66,6 @@ int main() {
             }
             else 
             {
-                std::cout << ss.str() << std::endl;
                 std::cout << "Illegal Values Entered!" << std::endl;
                 continue;
             }
