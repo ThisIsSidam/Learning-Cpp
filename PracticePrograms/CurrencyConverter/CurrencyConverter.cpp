@@ -1,3 +1,8 @@
+// Author- Anshu Kumar Singh a.k.a Sidam
+// Date- 13/04/2023
+// Purpose- C++ Practice Program
+// Name- Currency Converter
+
 #include <iostream>
 #include <sstream>
 #include <string>
